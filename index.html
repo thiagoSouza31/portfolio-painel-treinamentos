@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfólio · Painel de Treinamentos — Thiago Pereira de Souza</title>
+  <meta name="description" content="Portfólio do projeto de estágio Painel de Treinamentos, sistema web de uso interno da Prontosoft. Ciência da Computação · UniFil · 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="menu">
+  <div class="conteudo menu-interno">
+    <a class="marca" href="#inicio"><span class="selo">PT</span><span>Portfólio do Projeto</span></a>
+    <nav class="menu-links" aria-label="Seções">
+      <a href="#inicio"><b>1</b> Início</a>
+      <a href="#sobre"><b>2</b> Sobre</a>
+      <a href="#casos-de-uso"><b>3</b> Casos de uso e cronograma</a>
+      <a href="#documentacao"><b>4</b> Documentação</a>
+      <a href="#telas"><b>5</b> Telas e vídeo</a>
+      <a href="#relatorio"><b>6</b> Relatório</a>
+      <a href="#aluno"><b>7</b> Aluno</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1. INÍCIO -->
+  <section class="capa" id="inicio">
+    <div class="conteudo">
+      <div class="capa-grade">
+        <div>
+          <div class="sobretitulo">Portfólio de Estágio · 2026</div>
+          <h1>Painel de <em>Treinamentos</em></h1>
+          <p class="resumo">Sistema web de uso interno da Prontosoft que centraliza o registro e o acompanhamento dos treinamentos de clientes, substituindo as planilhas manuais por um único ambiente com ordens de serviço, cadastros e relatórios.</p>
+          <div class="botoes">
+            <a class="botao botao-principal" href="#telas">Ver o sistema funcionando</a>
+            <a class="botao botao-secundario" href="docs/relatorio-de-estagio.pdf" target="_blank" rel="noopener">Relatório de Estágio (PDF)</a>
+            <a class="botao botao-secundario" href="#casos-de-uso">Casos de uso</a>
+          </div>
+        </div>
+        <aside class="capa-cartao">
+          <h3>Objetivo do sistema</h3>
+          <p>Dar à equipe de treinamentos uma ferramenta para abrir, acompanhar e encerrar ordens de serviço de treinamento, com histórico completo por cliente e indicadores em dashboard.</p>
+          <dl class="dados">
+            <div><dt>Empresa</dt><dd>Prontosoft Software · Londrina/PR</dd></div>
+            <div><dt>Período</dt><dd>2026 · Estágios 1, 2 e 3</dd></div>
+            <div><dt>Curso</dt><dd>Ciência da Computação · UniFil</dd></div>
+            <div><dt>Stack</dt><dd>Java 21 · Spring Boot · Vue.js · Oracle</dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div class="numeros">
+        <div class="numero"><b>8</b><span>casos de uso especificados</span></div>
+        <div class="numero"><b>3</b><span>perfis de acesso</span></div>
+        <div class="numero"><b>20</b><span>diagramas UML, DER e BPMN</span></div>
+        <div class="numero"><b>3</b><span>etapas de estágio</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. SOBRE -->
+  <section class="secao" id="sobre">
+    <div class="conteudo">
+      <div class="secao-cabecalho">
+        <div class="secao-numero">2</div>
+        <div>
+          <h2>Sobre o projeto</h2>
+          <p>Contexto, tecnologias e organização do Painel de Treinamentos.</p>
+        </div>
+      </div>
+
+      <h3 class="subtitulo primeiro">O problema</h3>
+      <p class="texto">O setor de treinamentos da Prontosoft é o primeiro contato dos clientes com o ERP da empresa. Cada novo cliente ou evento de treinamento exigia o preenchimento de pelo menos três planilhas e um registro no sistema interno de OS. O levantamento com a equipe apontou três problemas:</p>
+      <div class="grade-3">
+        <div class="cartao">
+          <div class="marcador">1</div>
+          <h4>Registros fragmentados</h4>
+          <p>Planilhas de horários, de fluxo de treinamentos e de controle geral, além do sistema de OS, geravam lançamentos duplicados e retrabalho.</p>
+        </div>
+        <div class="cartao">
+          <div class="marcador">2</div>
+          <h4>Sem rastreabilidade</h4>
+          <p>Era difícil consultar rapidamente o histórico de um cliente ou saber o status atualizado de cada ordem de serviço aberta.</p>
+        </div>
+        <div class="cartao">
+          <div class="marcador">3</div>
+          <h4>Relatórios manuais</h4>
+          <p>Indicadores sobre o volume de treinamentos por período, tipo ou cliente dependiam de consolidação manual e estavam sujeitos a inconsistências.</p>
+        </div>
+      </div>
+      <p class="nota">A integração entre as ferramentas existentes não estava prevista, por isso a solução escolhida foi um sistema web independente, com banco de dados próprio e acesso pelo navegador.</p>
+
+      <h3 class="subtitulo">Tecnologias</h3>
+      <div class="abas" role="tablist">
+        <button class="aba" role="tab" aria-selected="true" aria-controls="tec-backend">Backend</button>
+        <button class="aba" role="tab" aria-selected="false" aria-controls="tec-frontend">Frontend</button>
+        <button class="aba" role="tab" aria-selected="false" aria-controls="tec-dados">Dados</button>
+        <button class="aba" role="tab" aria-selected="false" aria-controls="tec-ferramentas">Ferramentas</button>
+      </div>
+      <div class="painel-aba" id="tec-backend" role="tabpanel">
+        <div class="tecnologias">
+          <div class="tecnologia"><i class="ponto"></i><div><b>Java 21 LTS</b><span>Linguagem do back-end</span></div></div>
+          <div class="tecnologia"><i class="ponto"></i><div><b>Spring Boot 4.1</b><span>API REST, segurança e persistência</span></div></div>
+          <div class="tecnologia"><i class="ponto"></i><div><b>API REST</b><span>Padrão de comunicação com o front-end</span></div></div>
+          <div class="tecnologia"><i class="ponto"></i><div><b>JDBC</b><span>Conexão com o banco Oracle</span></div></div>
+        </div>
+      </div>
+      <div class="painel-aba" id="tec-frontend" role="tabpanel" hidden>
+        <div class="tecnologias">
+          <div class="tecnologia"><i class="ponto frontend"></i><div><b>Vue.js 3.5</b><span>Interface componentizada</span></div></div>
+          <div class="tecnologia"><i class="ponto frontend"></i><div><b>JavaScript</b><span>Lógica das telas e consumo da API</span></div></div>
+          <div class="tecnologia"><i class="ponto frontend"></i><div><b>HTTPS</b><span>Comunicação criptografada entre navegador e servidor</span></div></div>
+        </div>
+      </div>
+      <div class="painel-aba" id="tec-dados" role="tabpanel" hidden>
+        <div class="tecnologias">
+          <div class="tecnologia"><i class="ponto dados"></i><div><b>Oracle Database 23ai Free</b><span>Banco relacional, o mesmo ecossistema usado pela Prontosoft</span></div></div>
+          <div class="tecnologia"><i class="ponto dados"></i><div><b>DER conceitual e lógico</b><span>Modelagem das entidades e relacionamentos</span></div></div>
+        </div>
+      </div>
+      <div class="painel-aba" id="tec-ferramentas" role="tabpanel" hidden>
+        <div class="tecnologias">
+          <div class="tecnologia"><i class="ponto ferramenta"></i><div><b>IntelliJ IDEA</b><span>IDE do back-end</span></div></div>
+          <div class="tecnologia"><i class="ponto ferramenta"></i><div><b>Visual Studio Code</b><span>Editor do front-end</span></div></div>
+          <div class="tecnologia"><i class="ponto ferramenta"></i><div><b>Git e GitHub</b><span>Controle de versão do código</span></div></div>
+          <div class="tecnologia"><i class="ponto ferramenta"></i><div><b>Astah Community</b><span>Diagramas UML</span></div></div>
+          <div class="tecnologia"><i class="ponto ferramenta"></i><div><b>Bizagi Modeler</b><span>Workflow AS-IS em BPMN</span></div></div>
+          <div class="tecnologia"><i class="ponto ferramenta"></i><div><b>Balsamiq</b><span>Protótipos das telas</span></div></div>
+        </div>
+      </div>
+
+      <h3 class="subtitulo">Arquitetura</h3>
+      <div class="arquitetura">
+        <div class="bloco frontend">
+          <h4>Navegador</h4>
+          <ul><li>Front-end em Vue.js</li><li>Chrome, Firefox, Edge ou Opera</li><li>Sem instalação no cliente</li></ul>
+        </div>
+        <div class="seta"><b>→</b>HTTPS<br>REST</div>
+        <div class="bloco backend">
+          <h4>Servidor de aplicação</h4>
+          <ul><li>Spring Boot (JAR na JVM 21)</li><li>Controller · Service · Repository</li><li>Autenticação e perfis de acesso</li></ul>
+        </div>
+        <div class="seta"><b>→</b>JDBC</div>
+        <div class="bloco dados-camada">
+          <h4>Banco de dados</h4>
+          <ul><li>Oracle Database 23ai Free</li><li>Clientes, OS, serviços e usuários</li><li>Histórico de treinamentos</li></ul>
+        </div>
+      </div>
+
+      <h3 class="subtitulo">Módulos e perfis de acesso</h3>
+      <div class="grade-2">
+        <div class="cartao">
+          <h4>Módulos</h4>
+          <ul>
+            <li><b>Treinamentos:</b> abertura, lançamento incremental de serviços e encerramento de OS.</li>
+            <li><b>Cadastros:</b> clientes, técnicos, vendedores e serviços.</li>
+            <li><b>Relatórios:</b> dashboard com indicadores por período, tipo de serviço e cliente.</li>
+            <li><b>Administração:</b> usuários e permissões.</li>
+          </ul>
+        </div>
+        <div class="cartao">
+          <h4>Perfis</h4>
+          <ul>
+            <li><b>Técnico Admin:</b> tudo o que o Técnico faz, mais o gerenciamento de usuários.</li>
+            <li><b>Técnico:</b> cadastros, ordens de serviço de treinamento e relatórios.</li>
+            <li><b>Vendedor:</b> visualização do dashboard e dos relatórios.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. CASOS DE USO E CRONOGRAMA -->
+  <section class="secao" id="casos-de-uso">
+    <div class="conteudo">
+      <div class="secao-cabecalho">
+        <div class="secao-numero">3</div>
+        <div>
+          <h2>Casos de uso e cronograma</h2>
+          <p>Funcionalidades do sistema e andamento do projeto ao longo das três etapas do estágio.</p>
+        </div>
+      </div>
+
+      <h3 class="subtitulo primeiro">Casos de uso</h3>
+      <p class="aviso">Clique no nome para abrir a especificação completa.</p>
+      <!-- Para atualizar o status, troque a classe e o texto da etiqueta:
+           concluido = "Implementado" · andamento = "Em desenvolvimento" · previsto = "Previsto" -->
+      <div class="tabela">
+        <table>
+          <thead><tr><th>#</th><th>Caso de uso</th><th>Descrição</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><a class="nome" href="docs/uc-gerenciar-clientes.pdf" target="_blank" rel="noopener">Gerenciar Clientes</a><span class="atores">Técnico</span></td><td>Cadastrar, visualizar, editar e inativar clientes: razão social, CPF/CNPJ, proprietário, telefone, plano e domínio Prontosoft.</td><td><span class="etiqueta andamento">Em desenvolvimento</span></td></tr>
+            <tr><td>2</td><td><a class="nome" href="docs/uc-gerenciar-vendedores.pdf" target="_blank" rel="noopener">Gerenciar Vendedores</a><span class="atores">Técnico</span></td><td>Cadastro dos vendedores responsáveis pela venda do sistema ao cliente, classificados como Interno ou Revenda.</td><td><span class="etiqueta andamento">Em desenvolvimento</span></td></tr>
+            <tr><td>3</td><td><a class="nome" href="docs/uc-gerenciar-tecnicos.pdf" target="_blank" rel="noopener">Gerenciar Técnicos</a><span class="atores">Técnico</span></td><td>Cadastro dos técnicos de treinamento, com nome único, e-mail e telefone; inativação preserva o histórico das OS.</td><td><span class="etiqueta andamento">Em desenvolvimento</span></td></tr>
+            <tr><td>4</td><td><a class="nome" href="docs/uc-gerenciar-servicos.pdf" target="_blank" rel="noopener">Gerenciar Serviços</a><span class="atores">Técnico</span></td><td>Tipos de serviço lançados nas OS, com nome único e tipo Presencial ou Online.</td><td><span class="etiqueta andamento">Em desenvolvimento</span></td></tr>
+            <tr><td>5</td><td><a class="nome" href="docs/uc-gerenciar-treinamentos.pdf" target="_blank" rel="noopener">Gerenciar Treinamentos</a><span class="atores">Técnico</span></td><td>Funcionalidade central: abrir, editar, finalizar, reabrir e excluir ordens de serviço de treinamento, com status Em Aberto ou Finalizado.</td><td><span class="etiqueta andamento">Em desenvolvimento</span></td></tr>
+            <tr><td>6</td><td><a class="nome" href="docs/uc-adicionar-servicos.pdf" target="_blank" rel="noopener">Adicionar Serviços</a><span class="atores">Técnico · estende Gerenciar Treinamentos</span></td><td>Lançamento incremental de serviços em uma OS aberta, com data de execução e horários de início e fim.</td><td><span class="etiqueta andamento">Em desenvolvimento</span></td></tr>
+            <tr><td>7</td><td><a class="nome" href="docs/uc-gerenciar-usuarios.pdf" target="_blank" rel="noopener">Gerenciar Usuários</a><span class="atores">Técnico Admin</span></td><td>Criação e inativação de usuários, com e-mail único, senha forte armazenada com hash e tipo de acesso.</td><td><span class="etiqueta andamento">Em desenvolvimento</span></td></tr>
+            <tr><td>8</td><td><a class="nome" href="docs/uc-gerar-relatorios.pdf" target="_blank" rel="noopener">Gerar Relatórios</a><span class="atores">Técnico · Técnico Admin · Vendedor</span></td><td>Relatório de Treinamentos e Relatório por Serviço, filtrados por período; o Vendedor acessa pelo dashboard.</td><td><span class="etiqueta andamento">Em desenvolvimento</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="subtitulo">Etapas do estágio</h3>
+      <div class="tabela">
+        <table>
+          <thead><tr><th>Etapa</th><th>Descrição</th><th>Período</th><th>Entregas</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td class="sem-quebra"><span class="nome">Estágio 1</span></td><td>Análise</td><td class="sem-quebra">jun. 2026</td><td>Pedidos do Investidor, Especificação Suplementar, Plano de Estágio, protótipos e Workflow AS-IS</td><td><span class="etiqueta concluido">Concluído</span></td></tr>
+            <tr><td class="sem-quebra"><span class="nome">Estágio 2</span></td><td>Projeto e modelagem</td><td class="sem-quebra">ago. a set. 2026</td><td>Visão, Glossário, Diagramas de Caso de Uso, Classe, Estado, Sequência e Implantação, DER, especificações de Clientes e Vendedores</td><td><span class="etiqueta concluido">Concluído</span></td></tr>
+            <tr><td class="sem-quebra"><span class="nome">Estágio 3</span></td><td>Implementação</td><td class="sem-quebra">out. a nov. 2026</td><td>Especificações dos demais casos de uso, revisão dos documentos, implementação do código, relatório e portfólio</td><td><span class="etiqueta andamento">Em andamento</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="subtitulo">Entregas do Estágio 3</h3>
+      <ol class="linha-do-tempo">
+        <li><time>12/10</time><p><b>Revisão e formatação dos documentos RUP</b> no padrão ABNT, compatíveis com Word e Google Docs.</p></li>
+        <li><time>13/10</time><p><b>Especificações de caso de uso</b> de Gerenciar Técnicos, Serviços, Usuários e Treinamentos.</p></li>
+        <li><time>19/10</time><p><b>Gerenciar Serviços v1.1:</b> remoção do código e inclusão do tipo Presencial ou Online.</p></li>
+        <li><time>27/10</time><p><b>Especificação de Adicionar Serviços</b>, ponto de extensão de Gerenciar Treinamentos.</p></li>
+        <li><time>28/10</time><p><b>Especificação de Gerar Relatórios.</b></p></li>
+        <li><time>14/11</time><p><b>Relatório de Estágio atualizado</b> com os novos casos de uso e diagramas.</p></li>
+        <li class="andamento"><time>16/11</time><p><b>Portfólio do projeto</b> publicado no GitHub Pages.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 4. DOCUMENTAÇÃO -->
+  <section class="secao" id="documentacao">
+    <div class="conteudo">
+      <div class="secao-cabecalho">
+        <div class="secao-numero">4</div>
+        <div>
+          <h2>Documentação</h2>
+          <p>Diagramas e artefatos produzidos segundo o RUP e a UML.</p>
+        </div>
+      </div>
+
+      <h3 class="subtitulo primeiro">Diagramas</h3>
+      <p class="aviso">Clique na imagem para ampliar. O link abre o arquivo original.</p>
+      <div class="abas" role="tablist">
+        <button class="aba" role="tab" aria-selected="true" aria-controls="dg-geral">Modelagem e processo</button>
+        <button class="aba" role="tab" aria-selected="false" aria-controls="dg-sequencia">Sequência (8)</button>
+        <button class="aba" role="tab" aria-selected="false" aria-controls="dg-estado">Estado (6)</button>
+      </div>
+      <div class="painel-aba" id="dg-geral" role="tabpanel"><div class="documentos">
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/caso-de-uso.png" alt="Diagrama de Caso de Uso" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Requisitos</span><h4>Diagrama de Caso de Uso</h4><p>Oito casos de uso e os atores Técnico, Técnico Admin e Vendedor.</p><div class="links"><a href="img/diagramas/caso-de-uso.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/classe.png" alt="Diagrama de Classe" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Estrutura</span><h4>Diagrama de Classe</h4><p>Classes de domínio: Cliente, Vendedor, Técnico, Serviço, Treinamento e Usuário.</p><div class="links"><a href="img/diagramas/classe.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/implantacao.png" alt="Diagrama de Implantação" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Arquitetura</span><h4>Diagrama de Implantação</h4><p>Front-end Vue.js no navegador, backend em JAR na JVM 21 e Oracle via JDBC.</p><div class="links"><a href="img/diagramas/implantacao.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/der-conceitual.png" alt="DER Conceitual" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Dados</span><h4>DER Conceitual</h4><p>Entidades do domínio e seus relacionamentos de negócio.</p><div class="links"><a href="img/diagramas/der-conceitual.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/der-logico.png" alt="DER Lógico" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Dados</span><h4>DER Lógico</h4><p>Tabelas, atributos e chaves do esquema PAINEL_TREINAMENTOS.</p><div class="links"><a href="img/diagramas/der-logico.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+        <article class="documento largo">
+          <button class="miniatura" type="button"><img src="img/diagramas/workflow-as-is.png" alt="Workflow AS-IS" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Processo</span><h4>Workflow AS-IS</h4><p>Processo atual em BPMN, com as raias Cliente, Vendedor e Técnico e as três planilhas usadas hoje.</p><div class="links"><a href="img/diagramas/workflow-as-is.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+      </div></div>
+      <div class="painel-aba" id="dg-sequencia" role="tabpanel" hidden><div class="documentos">
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/sequencia-clientes.png" alt="Gerenciar Clientes" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Sequência</span><h4>Gerenciar Clientes</h4><p>Cadastro, visualização, edição e inativação de clientes.</p><div class="links"><a href="img/diagramas/sequencia-clientes.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/sequencia-vendedores.png" alt="Gerenciar Vendedores" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Sequência</span><h4>Gerenciar Vendedores</h4><p>Cadastro de vendedores internos e revendas.</p><div class="links"><a href="img/diagramas/sequencia-vendedores.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/sequencia-tecnicos.png" alt="Gerenciar Técnicos" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Sequência</span><h4>Gerenciar Técnicos</h4><p>Cadastro dos técnicos, com validação de nome único.</p><div class="links"><a href="img/diagramas/sequencia-tecnicos.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/sequencia-servicos.png" alt="Gerenciar Serviços" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Sequência</span><h4>Gerenciar Serviços</h4><p>Cadastro de serviços com tipo Presencial ou Online.</p><div class="links"><a href="img/diagramas/sequencia-servicos.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/sequencia-usuarios.png" alt="Gerenciar Usuários" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Sequência</span><h4>Gerenciar Usuários</h4><p>Criação e inativação de usuários pelo Técnico Admin.</p><div class="links"><a href="img/diagramas/sequencia-usuarios.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/sequencia-treinamentos.png" alt="Gerenciar Treinamentos" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Sequência</span><h4>Gerenciar Treinamentos</h4><p>Abertura, finalização, reabertura e exclusão de OS.</p><div class="links"><a href="img/diagramas/sequencia-treinamentos.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/sequencia-adicionar-servicos.png" alt="Adicionar Serviços" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Sequência</span><h4>Adicionar Serviços</h4><p>Lançamento de serviços em uma OS em aberto.</p><div class="links"><a href="img/diagramas/sequencia-adicionar-servicos.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/sequencia-gerar-relatorios.png" alt="Gerar Relatórios" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Sequência</span><h4>Gerar Relatórios</h4><p>Relatório de Treinamentos e Relatório por Serviço com filtros de período.</p><div class="links"><a href="img/diagramas/sequencia-gerar-relatorios.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+      </div></div>
+      <div class="painel-aba" id="dg-estado" role="tabpanel" hidden><div class="documentos">
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/estado-clientes.png" alt="Cliente" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Estado</span><h4>Cliente</h4><p>Estados do cadastro de cliente ao longo do ciclo de vida.</p><div class="links"><a href="img/diagramas/estado-clientes.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/estado-vendedores.png" alt="Vendedor" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Estado</span><h4>Vendedor</h4><p>Estados do cadastro de vendedor ao longo do ciclo de vida.</p><div class="links"><a href="img/diagramas/estado-vendedores.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/estado-tecnicos.png" alt="Técnico" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Estado</span><h4>Técnico</h4><p>Estados do cadastro de técnico ao longo do ciclo de vida.</p><div class="links"><a href="img/diagramas/estado-tecnicos.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/estado-servicos.png" alt="Serviço" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Estado</span><h4>Serviço</h4><p>Estados do cadastro de serviço ao longo do ciclo de vida.</p><div class="links"><a href="img/diagramas/estado-servicos.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/estado-usuarios.png" alt="Usuário" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Estado</span><h4>Usuário</h4><p>Estados do cadastro de usuário ao longo do ciclo de vida.</p><div class="links"><a href="img/diagramas/estado-usuarios.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+        <article class="documento">
+          <button class="miniatura" type="button"><img src="img/diagramas/estado-treinamentos.png" alt="Treinamento" loading="lazy"></button>
+          <div class="corpo"><span class="categoria">Estado</span><h4>Treinamento</h4><p>Ciclo da OS de treinamento: Em Aberto e Finalizado.</p><div class="links"><a href="img/diagramas/estado-treinamentos.png" target="_blank" rel="noopener">Abrir original</a></div></div>
+        </article>
+      </div></div>
+
+      <h3 class="subtitulo">Artefatos</h3>
+      <div class="artefatos">
+        <a class="artefato" href="docs/pedidos-do-investidor.pdf" target="_blank" rel="noopener"><div><b>Pedidos do Investidor</b><span>Necessidades levantadas com a empresa</span></div><span class="externo">↗</span></a>
+        <a class="artefato" href="docs/especificacao-suplementar.pdf" target="_blank" rel="noopener"><div><b>Especificação Suplementar</b><span>Requisitos não funcionais</span></div><span class="externo">↗</span></a>
+        <a class="artefato" href="docs/visao.pdf" target="_blank" rel="noopener"><div><b>Visão Informal</b><span>Problema, envolvidos e necessidades</span></div><span class="externo">↗</span></a>
+        <a class="artefato" href="docs/glossario.pdf" target="_blank" rel="noopener"><div><b>Glossário</b><span>Termos do domínio</span></div><span class="externo">↗</span></a>
+        <a class="artefato" href="docs/plano-de-estagio.pdf" target="_blank" rel="noopener"><div><b>Plano de Estágio</b><span>Proposta, telas e cronograma</span></div><span class="externo">↗</span></a>
+        <a class="artefato" href="docs/uc-gerenciar-clientes.pdf" target="_blank" rel="noopener"><div><b>UC · Gerenciar Clientes</b><span>Especificação de caso de uso</span></div><span class="externo">↗</span></a>
+        <a class="artefato" href="docs/uc-gerenciar-vendedores.pdf" target="_blank" rel="noopener"><div><b>UC · Gerenciar Vendedores</b><span>Especificação de caso de uso</span></div><span class="externo">↗</span></a>
+        <a class="artefato" href="docs/uc-gerenciar-tecnicos.pdf" target="_blank" rel="noopener"><div><b>UC · Gerenciar Técnicos</b><span>Especificação de caso de uso</span></div><span class="externo">↗</span></a>
+        <a class="artefato" href="docs/uc-gerenciar-servicos.pdf" target="_blank" rel="noopener"><div><b>UC · Gerenciar Serviços</b><span>Especificação de caso de uso</span></div><span class="externo">↗</span></a>
+        <a class="artefato" href="docs/uc-gerenciar-usuarios.pdf" target="_blank" rel="noopener"><div><b>UC · Gerenciar Usuários</b><span>Especificação de caso de uso</span></div><span class="externo">↗</span></a>
+        <a class="artefato" href="docs/uc-gerenciar-treinamentos.pdf" target="_blank" rel="noopener"><div><b>UC · Gerenciar Treinamentos</b><span>Especificação de caso de uso</span></div><span class="externo">↗</span></a>
+        <a class="artefato" href="docs/uc-adicionar-servicos.pdf" target="_blank" rel="noopener"><div><b>UC · Adicionar Serviços</b><span>Especificação de caso de uso</span></div><span class="externo">↗</span></a>
+        <a class="artefato" href="docs/uc-gerar-relatorios.pdf" target="_blank" rel="noopener"><div><b>UC · Gerar Relatórios</b><span>Especificação de caso de uso</span></div><span class="externo">↗</span></a>
+        <a class="artefato" href="https://github.com/SEU-USUARIO/SEU-REPOSITORIO" target="_blank" rel="noopener"><div><b>Repositório no GitHub</b><span>Código-fonte do sistema</span></div><span class="externo">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. TELAS E VÍDEO -->
+  <section class="secao" id="telas">
+    <div class="conteudo">
+      <div class="secao-cabecalho">
+        <div class="secao-numero">5</div>
+        <div>
+          <h2>Telas e vídeo</h2>
+          <p>Demonstração do sistema e capturas das principais telas.</p>
+        </div>
+      </div>
+
+      <h3 class="subtitulo primeiro">Vídeo de demonstração</h3>
+      <div class="video">
+        <!-- Troque pelo iframe do YouTube: <iframe src="https://www.youtube.com/embed/ID_DO_VIDEO" title="Demonstração do Painel de Treinamentos" allowfullscreen></iframe> -->
+        <div class="vazio">Vídeo de demonstração em breve</div>
+      </div>
+
+      <h3 class="subtitulo">Protótipos das telas</h3>
+      <p class="aviso">Esboços feitos no Balsamiq. Clique na imagem para ampliar.</p>
+      <div class="capturas">
+        <figure class="captura"><button class="miniatura" type="button"><img src="img/telas/login.png" alt="Login" loading="lazy"></button><figcaption><b>Login</b>Acesso com usuário e senha e saudação contextual.</figcaption></figure>
+        <figure class="captura"><button class="miniatura" type="button"><img src="img/telas/dashboard.png" alt="Dashboard" loading="lazy"></button><figcaption><b>Dashboard</b>Treinamentos no período, OS em aberto, taxa de conclusão e gráficos.</figcaption></figure>
+        <figure class="captura"><button class="miniatura" type="button"><img src="img/telas/treinamentos.png" alt="Treinamentos" loading="lazy"></button><figcaption><b>Treinamentos</b>Ordens de serviço com filtro por status e período.</figcaption></figure>
+        <figure class="captura"><button class="miniatura" type="button"><img src="img/telas/cadastrar-treinamento.png" alt="Cadastrar treinamento" loading="lazy"></button><figcaption><b>Cadastrar treinamento</b>Busca do cliente com preenchimento automático dos dados.</figcaption></figure>
+        <figure class="captura"><button class="miniatura" type="button"><img src="img/telas/adicionar-servicos.png" alt="Adicionar serviços" loading="lazy"></button><figcaption><b>Adicionar serviços</b>Lançamento incremental de serviços na OS aberta.</figcaption></figure>
+        <figure class="captura"><button class="miniatura" type="button"><img src="img/telas/clientes.png" alt="Clientes" loading="lazy"></button><figcaption><b>Clientes</b>Listagem com busca, filtros e menu de ações.</figcaption></figure>
+        <figure class="captura"><button class="miniatura" type="button"><img src="img/telas/cadastrar-cliente.png" alt="Cadastrar cliente" loading="lazy"></button><figcaption><b>Cadastrar cliente</b>Razão social, CPF/CNPJ, proprietário, telefone, plano e domínio.</figcaption></figure>
+        <figure class="captura"><button class="miniatura" type="button"><img src="img/telas/tecnicos.png" alt="Técnicos" loading="lazy"></button><figcaption><b>Técnicos</b>Equipe de treinamento com status e edição.</figcaption></figure>
+        <figure class="captura"><button class="miniatura" type="button"><img src="img/telas/cadastrar-tecnico.png" alt="Cadastrar técnico" loading="lazy"></button><figcaption><b>Cadastrar técnico</b>Nome, e-mail e telefone do profissional.</figcaption></figure>
+        <figure class="captura"><button class="miniatura" type="button"><img src="img/telas/vendedores.png" alt="Vendedores" loading="lazy"></button><figcaption><b>Vendedores</b>Vendedores internos e revendas.</figcaption></figure>
+        <figure class="captura"><button class="miniatura" type="button"><img src="img/telas/cadastrar-vendedor.png" alt="Cadastrar vendedor" loading="lazy"></button><figcaption><b>Cadastrar vendedor</b>Dados do vendedor e tipo Interno ou Revenda.</figcaption></figure>
+        <figure class="captura"><button class="miniatura" type="button"><img src="img/telas/servicos.png" alt="Serviços" loading="lazy"></button><figcaption><b>Serviços</b>Tipos de serviço disponíveis para as OS.</figcaption></figure>
+        <figure class="captura"><button class="miniatura" type="button"><img src="img/telas/cadastrar-servico.png" alt="Cadastrar serviço" loading="lazy"></button><figcaption><b>Cadastrar serviço</b>Nome do serviço e tipo Presencial ou Online.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. RELATÓRIO -->
+  <section class="secao" id="relatorio">
+    <div class="conteudo">
+      <div class="secao-cabecalho">
+        <div class="secao-numero">6</div>
+        <div>
+          <h2>Relatório</h2>
+          <p>Relatório de estágio atualizado até 14/11/2026.</p>
+        </div>
+      </div>
+      <div class="relatorio">
+        <div class="relatorio-topo">
+          <div>
+            <h3>Relatório de Estágio — Painel de Treinamentos</h3>
+            <p class="discreto pequeno" style="margin:0">Sistema de controle de treinamentos da Prontosoft · Londrina, 2026</p>
+          </div>
+          <div class="botoes" style="margin:0">
+            <a class="botao botao-principal" href="docs/relatorio-de-estagio.pdf" target="_blank" rel="noopener">Abrir o PDF</a>
+            <a class="botao botao-secundario" href="docs/relatorio-de-estagio.pdf" download>Baixar</a>
+          </div>
+        </div>
+        <iframe class="pdf" src="docs/relatorio-de-estagio.pdf" title="Relatório de Estágio — Painel de Treinamentos"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. ALUNO -->
+  <section class="secao" id="aluno">
+    <div class="conteudo">
+      <div class="secao-cabecalho">
+        <div class="secao-numero">7</div>
+        <div>
+          <h2>Aluno</h2>
+          <p>Identificação do estágio.</p>
+        </div>
+      </div>
+      <div class="cartao aluno">
+        <dl class="dados">
+          <div><dt>Nome</dt><dd>Thiago Pereira de Souza</dd></div>
+          <div><dt>Matrícula</dt><dd>000000</dd></div>
+          <div><dt>Professor orientador</dt><dd>Marcelo Yukio Yamamoto</dd></div>
+          <div><dt>Curso</dt><dd>Bacharelado em Ciência da Computação</dd></div>
+          <div><dt>Instituição</dt><dd>UniFil · Centro Universitário Filadélfia</dd></div>
+          <div><dt>Empresa concedente</dt><dd>Prontosoft Software · Londrina/PR</dd></div>
+          <div><dt>Projeto</dt><dd>Painel de Treinamentos</dd></div>
+          <div><dt>Período</dt><dd>2026</dd></div>
+          <div><dt>Repositório</dt><dd><a href="https://github.com/SEU-USUARIO/SEU-REPOSITORIO" target="_blank" rel="noopener">github.com/SEU-USUARIO/SEU-REPOSITORIO</a></dd></div>
+          <div><dt>Entrega</dt><dd>__/11/2026</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <div class="conteudo rodape-interno">
+    <span>Thiago Pereira de Souza · UniFil · 2026</span>
+    <a href="#inicio">Voltar ao início ↑</a>
+  </div>
+</footer>
+
+<div class="ampliar" id="ampliar" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+  <span class="legenda-ampliada"></span>
+  <button class="fechar" type="button" aria-label="Fechar">×</button>
+  <img alt="">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
